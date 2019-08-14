@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 100px 30px;
+
+}
+
+body {
+  font-family: 'Staatliches', cursive;
+}
+
+@media screen and (min-width: 980px) /* Desktop */ {
+  body {
+    background: red;
+  }
+}
+
+@media screen  and (max-width: 979px) /* Tablet */ {
+  body {
+    background: blue;
+  }
+}
+
+@media screen and (max-width: 500px) /* Mobile */ {
+  body {
+    background: green;
+  }
+}
+
+/* > 500px background: url ('https://media.gq.com/photos/56202966a7113fb922cd7056/16:9/w_1280%2Cc_limit/die-hard-bruce-willis.jpg') fixed; */
+
+/* < 500px background: url ('https://peopledotcom.files.wordpress.com/2018/08/die-hard-3-2000.jpg') fixed;
