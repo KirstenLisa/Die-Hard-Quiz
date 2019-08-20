@@ -44,6 +44,14 @@ height: 100%;
 width: 100%;
 }
 
+.startButton, .restartButton {
+margin-top: 15px;
+margin-bottom: 15px;
+width: 30%;
+height: 40px;
+background: yellow;
+}
+
 .questionAnswerForm {
 display: flex;
 flex-direction: column;
@@ -65,35 +73,42 @@ background: red;
 height: 50px;
 }
 
+.answerSubmitButton {
+margin-top: 15px;
+margin-bottom: 15px;
+width: 100%;
+height: 40px;
+background: yellow;
+}
+
 .feedback {
+display: flex;
+flex-direction: column;
 margin-top: 100px;
+width: 90%;
+text-align: center;
 background: grey;
 }
 
 .feedbackCorrect, .feedbackFalse, .lastFeedbackCorrect, .lastFeedbackFalse {
-height: 100px;
-display: flex;
-flex-direction: row;
 background: white;
-margin: 150px 10px 50px 0px;
+margin: 150px 10px 0px 0px;
 width: 100%;
 }
 
 .feedbackImage {
 align-self: flex-start;
-width: 50%;
-
+width: 100%;
 }
 
 h3 {
-width: 50%;
-align-self: center;
+width: 100%;
 }
 
-.startButton, .answerSubmitButton, .nextQuestionButton, .resultButton, .restartButton {
-margin-top: 15px;
-margin-bottom: 15px;
-width: 30%;
+.nextQuestionButton, .resultButton {
+margin-top: 0px;
+margin-bottom: 0px;
+width: 100%;
 height: 40px;
 background: yellow;
 }
@@ -120,6 +135,3 @@ body {
 }
 }
 
-/* > 500px background: url ('https://media.gq.com/photos/56202966a7113fb922cd7056/16:9/w_1280%2Cc_limit/die-hard-bruce-willis.jpg') fixed; */
-
-/* < 500px background: url ('https://peopledotcom.files.wordpress.com/2018/08/die-hard-3-2000.jpg') fixed;
