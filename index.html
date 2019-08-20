@@ -10,7 +10,7 @@
   </head>
   <body>
     <header role="banner">
-      <img class="headerPic" alt='header-pic'>
+      <img class="headerImage" src="https://reviewswithatude.files.wordpress.com/2012/11/die_hard.jpg" alt='header-pic'>
       <p class="name">Die Hard Quiz</p>
       <ul class="quizSummary">
         <li>Question: <span class="questionNumber">0</span> of 10</li>
@@ -18,13 +18,96 @@
         </ul>
     </header>
     <main role="main">
-      <div class="starterPage">
-        <img class="startPic" alt="Start Pic">
-         <h1 class="greeting">Are you ready to die hard?</h1>
-         <button class="startButton" type="submit">Start Quiz</button>
+      <div class="startPage">
+        <img class="startImage" src="https://i.kinja-img.com/gawker-media/image/upload/s--WZdr04-x--/c_scale,f_auto,fl_progressive,q_80,w_800/ipi9oaqq6dvtavppl5as.jpg" alt="Start Pic">
+        <h1 class="greeting">Are you ready to die hard?</h1>
+        <button class="startButton" type="button">Start Quiz</button>
       </div>
 
-      <div class="quizForm"></div>
+  
+      <div class="questionAnswerForm">
+        <h2>Question 1</h2>
+        <form class="answerOptions">
+        <fieldset>
+          <label class="answerOptionRadio" >answer Option 1
+            <input type="radio" name="answerOption" value="answerOption1" required>
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="answerOptionRadio">answer Option 2
+            <input type="radio" name="answerOption" value="answerOption2" required>
+            <span class="checkmark"></span>
+          </label>
+          
+          <label class="answerOptionRadio">answer Option 3
+            <input type="radio" name="answerOption" value="answerOption3" required>
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="answerOptionRadio">answer Option 4
+            <input type="radio" name="answerOption" value="answerOption4" required>
+            <span class="checkmark"></span>
+          </label>
+            </fieldset>
+            <button class="answerSubmitButton" type="submit">Check it</button>
+            </form>
+        </div>
+
+        <div class="feedback">
+          <div class="feedbackCorrect">
+            <img class="feedbackImage" src="https://storiesthatreallymattered.files.wordpress.com/2009/01/diehard982734.jpg" alt="John McClane">
+            <h3>Yippee-kai-yay! You are right!</h3>
+            </div>
+          <button class="nextQuestionButton" type="button">Next Question</button>
+        </div>
+
+    <div class="feedback">
+          <div class="feedbackFalse">
+            <img class="feedbackImage" src="https://storiesthatreallymattered.files.wordpress.com/2009/01/diehard982734.jpg" alt="John McClane">
+            <h3>That's wrong. <span>"STORE[questionNumber].correctAnswer"</span> is correct.</h3>
+            </div>
+          <button class="nextQuestionButton" type="button">Next Question</button>
+        </div>
+      
+    <div class="feedback">
+          <div class="lastFeedbackCorrect">
+            <img class="feedbackImage" src="https://static01.nyt.com/images/2013/02/14/arts/good-span/good-span-jumbo.jpg" alt ="Die Hard 5">
+            <h3>Yippee-kai-yay! You are right!</h3>
+            </div>
+          <button class="resultButton" type="button">Result</button>
+        </div>
+
+    <div class="feedback">
+          <div class="lastFeedbackFalse">
+            <img class="feedbackImage" src="https://static01.nyt.com/images/2013/02/14/arts/good-span/good-span-jumbo.jpg" alt ="Die Hard 5">
+            <h3>That's wrong. <span>"STORE[questionNumber].correctAnswer"</span> is correct.</h3>
+            </div>
+          <button class="resultButton" type="button">Result</button>
+        </div>
+
+       <div class="resultPage result1">
+          <img class="resultImage one" src="https://media.npr.org/assets/img/2013/02/14/df-07405r_rgb-1c87673232c2f1a1011d2bea5262ca07c95a7349-s800-c85.jpg" alt="John McClane doing something awesome">
+          <p>result 1</p>
+          <button class="restartButton" type="button">Try again</button>
+        </div>
+
+      <div class="resultPage result2">
+          <img class="resultImage two" src="https://apps-cloud.n-tv.de/img/11002071-1373985628000/16-9/750/36823409.jpg" alt="John McClane doing something awesome">
+          <p>result 2</p>
+          <button class="restartButton" type="button">Try again</button>
+      </div>
+
+      <div class="resultPage result3">
+          <img class="resultImage three" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
+          <p>result 3</p>
+          <button class="restartButton" type="button">Try again</button>
+        </div>
+      
+      <div class="resultPage result4">
+          <img class="resultImage four" src="https://tel.img.pmdstatic.net/fit/https.3A.2F.2Fphoto.2Eprogramme-tv.2Enet.2Fupload.2Fslideshow.2Fles-films-les-plus-marquants-de-bruce-willis-7763.2F1-die-hard-1-131753.2Ejpg/902x600/quality/65/die-hard-1-piege-de-cristal-1988.jpg" alt="John McClane doing something awesome">
+          <p>result 3</p>
+          <button class="restartButton" type="button">Try again</button>
+        </div>
 
     </main>
 

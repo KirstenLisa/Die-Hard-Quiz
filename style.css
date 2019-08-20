@@ -1,47 +1,123 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-}
-
-ul {
-  list-style: none;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: 100px 30px;
-
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Staatliches', cursive;
+font-family: 'Staatliches', cursive;
+}
+
+
+header {
+position: fixed;
+display: flex;
+flex-direction: column;
+align-items: center;
+top: 0px;
+left: 0px;
+color: white;
+background: black;
+width: 100%;
+}
+
+.headerImage {
+border-radius: 50%;
+height: auto;
+width: 20%;
+}
+
+ul {
+list-style: none;
+padding-left: 0px;
+}
+
+.startPage, .resultPage {
+display: flex;
+flex-direction: column;
+align-items: center;
+background: white;
+margin: 150px 10px 50px 0px;
+width: 100%;
+}
+
+.startImage {
+height: 100%;
+width: 100%;
+}
+
+.questionAnswerForm {
+display: flex;
+flex-direction: column;
+background: white;
+}
+
+h2, .answerOptionRadio {
+text-align: left;
+margin: 10px;
+}
+
+.answerOptions {
+background: grey;
+}
+
+.answerOptionRadio {
+display: block;
+background: red;
+height: 50px;
+}
+
+.feedback {
+margin-top: 100px;
+background: grey;
+}
+
+.feedbackCorrect, .feedbackFalse, .lastFeedbackCorrect, .lastFeedbackFalse {
+height: 100px;
+display: flex;
+flex-direction: row;
+background: white;
+margin: 150px 10px 50px 0px;
+width: 100%;
+}
+
+.feedbackImage {
+align-self: flex-start;
+width: 50%;
+
+}
+
+h3 {
+width: 50%;
+align-self: center;
+}
+
+.startButton, .answerSubmitButton, .nextQuestionButton, .resultButton, .restartButton {
+margin-top: 15px;
+margin-bottom: 15px;
+width: 30%;
+height: 40px;
+background: yellow;
+}
+
+.resultImage{
+max-width: 100%;
 }
 
 @media screen and (min-width: 980px) /* Desktop */ {
-  body {
-    background: red;
-  }
+body {
+  background: red;
+}
 }
 
 @media screen  and (max-width: 979px) /* Tablet */ {
-  body {
-    background: blue;
-  }
+body {
+  background: blue;
+}
 }
 
 @media screen and (max-width: 500px) /* Mobile */ {
-  body {
-    background: green;
-  }
+body {
+  background: green;
+}
 }
 
 /* > 500px background: url ('https://media.gq.com/photos/56202966a7113fb922cd7056/16:9/w_1280%2Cc_limit/die-hard-bruce-willis.jpg') fixed; */
