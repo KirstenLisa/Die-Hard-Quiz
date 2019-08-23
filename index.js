@@ -60,10 +60,9 @@ function increaseScore() {
   $(".score").text(score);
 }
 
-
 function generateNextQuestion() {
   $(".mainQuiz").html(questionPage());
-    formHandler();
+  formHandler();
 }
 
 function nextQuestionHandler() {
@@ -73,20 +72,45 @@ function nextQuestionHandler() {
   });
 }
 
+function resultButtonHandler() {
+  $(".resultButton").on("click", function(event) {
+    resultPage();
+  })
+}
+
+function restartButtonHandler() {
+  $(".restartButton").on("click", function(event) {
+    console.log("restartButton works");
+  });
+}
+
+
 function submitAnswer() {
     //finds user input
     let userAnswer = $('input[name="answerOption"]:checked').val();
     let testAnswer = `${STORE[questionNumber].correctAnswer}`;
     console.log(userAnswer);
-    if(userAnswer === testAnswer) {
+    if(questionNumber < 9) {
+      if(userAnswer === testAnswer) {
       $(".mainQuiz").html(corrAnswerFeedback());
       nextQuestionHandler();
+      increaseScore();
     } else {
       $(".mainQuiz").html(wrongAnswerFeedback());
       nextQuestionHandler();
     }
+  } else {
+    console.log(questionNumber)
+      if(userAnswer === testAnswer) {
+        $(".mainQuiz").html(lastCorrAnswer());
+        resultButtonHandler();
+        increaseScore();
+      } else {
+        $(".mainQuiz").html(lastWrongAnswer());
+        resultButtonHandler();
+      }
+    }
   };
-
 
 
 function corrAnswerFeedback() {
@@ -114,88 +138,76 @@ return `<div class="feedback">
 
 function lastCorrAnswer() {
 /* generates page for last corrAnswer */
-  return
-  ` <div class="feedback">
-          <div class="lastFeedbackCorrect">
-            <img class="feedbackImage" src="${STORE[questionNumber].pic}" alt="${STORE[questionNumber].alt}">
-            <h3>Yippee-kai-yay! You are right!</h3>
+console.log("lastCorrAnswer works");
+  return `<div class="feedback">
+            <div class="lastFeedbackCorrect">
+              <img class="feedbackImage" src="${STORE[questionNumber].pic}" alt="${STORE[questionNumber].alt}">
+              <h3>Yippee-kai-yay! You are right!</h3>
             </div>
           <button class="resultButton" type="button">Result</button>
         </div>`;
 }
-
 
 function lastWrongAnswer() {
 /* generates page for last wrongAnswer */
-console.log("lastWrongAnswer works")
-return
-` <div class="feedback">
+console.log("lastWrongAnswer works");
+return `<div class="feedback">
           <div class="lastFeedbackFalse">
             <img class="feedbackImage" src="${STORE[questionNumber].pic}" alt="${STORE[questionNumber].alt}">
-            <h3>That's wrong. <span>"STORE[questionNumber].correctAnswer"</span> is correct.</h3>
+            <h3>That's wrong. ${STORE[questionNumber].correctAnswer} is correct.</h3>
             </div>
           <button class="resultButton" type="button">Result</button>
         </div>`;
 }
 
-
-
-function nextQuestion() {
-  $(".nextQuestionButton").on("click", function() {
-    console.log("nextQuestion works");
-  });
-  /* generates div for next question 
-  updates questionNumber */
-
-}
-
-function finalScore() {
-  $(".resultButton").on("click", function() {
-    console.log("finalScore works");
-
-  });  
-}
-
 function resultPage() {
+  console.log("resultPage works");
+  $(".quizSummary").remove();
+  restartButtonHandler();
+
 /* generates page for end result  */
   if(score === 10) {
-    return
-      `<div class="resultPage result1">
-          <img class="resultImage One" src="https://media.npr.org/assets/img/2013/02/14/df-07405r_rgb-1c87673232c2f1a1011d2bea5262ca07c95a7349-s800-c85.jpg" alt="John McClane doing something awesome">
+    $(".mainquiz").html(`<div class="resultPage result1">
+          <img class="resultImage one" src="https://media.npr.org/assets/img/2013/02/14/df-07405r_rgb-1c87673232c2f1a1011d2bea5262ca07c95a7349-s800-c85.jpg" alt="John McClane doing something awesome">
           <p>${score} points! You are tough, you also watched Die Hard 5. RESPECT!</p>
           <button class="restartButton" type="button">Try again</button>
-        </div>`;
+        </div>`);
 
   } else if(score > 5) {
-    return 
-    `<div class="resultPage result1">
-          <img class="resultImage One" src="https://apps-cloud.n-tv.de/img/11002071-1373985628000/16-9/750/36823409.jpg" alt="John McClane doing something awesome">
+    $(".mainQuiz").html(`<div class="resultPage result2">
+          <img class="resultImage two" src="https://apps-cloud.n-tv.de/img/11002071-1373985628000/16-9/750/36823409.jpg" alt="John McClane doing something awesome">
           <p>${score} points! Okay, not that bad.</p>
           <button class="restartButton" type="button">Try again</button>
-        </div>`;
+      </div>`);
 
   } else if(score > 3) {
-    return 
-    `<div class="resultPage result1">
-          <img class="resultImage One" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
+    $(".mainQuiz").html(`<div class="resultPage result3">
+          <img class="resultImage three" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
           <p>${score} points! What is wrong with you? Try again!</p>
           <button class="restartButton" type="button">Try again</button>
-        </div>`;
+        </div>`);
+        
+  } else if(score === 1) {
+    $(".mainQuiz").html(`<div class="resultPage result3">
+          <img class="resultImage three" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
+          <p>${score} point! What is wrong with you? Try again!</p>
+          <button class="restartButton" type="button">Try again</button>
+        </div>`);
+
   } else {
-      `<div class="resultPage result1">
-          <img class="resultImage One" src="https://tel.img.pmdstatic.net/fit/https.3A.2F.2Fphoto.2Eprogramme-tv.2Enet.2Fupload.2Fslideshow.2Fles-films-les-plus-marquants-de-bruce-willis-7763.2F1-die-hard-1-131753.2Ejpg/902x600/quality/65/die-hard-1-piege-de-cristal-1988.jpg" alt="John McClane doing something awesome">
+    $(".mainQuiz").html(`<div class="resultPage result4">
+          <img class="resultImage four" src="https://tel.img.pmdstatic.net/fit/https.3A.2F.2Fphoto.2Eprogramme-tv.2Enet.2Fupload.2Fslideshow.2Fles-films-les-plus-marquants-de-bruce-willis-7763.2F1-die-hard-1-131753.2Ejpg/902x600/quality/65/die-hard-1-piege-de-cristal-1988.jpg" alt="John McClane doing something awesome">
           <p>${score} points! Disgrace!</p>
           <button class="restartButton" type="button">Try again</button>
-        </div>`;
+        </div>`);
   }
 }
 
 
 
-function restartQuiz() {
-/* changes from resultPage to questionPage */
-  $(".restartButton").on("click", function(){
-    //restarts quiz
+function restartQuiz () {
+  $(".restartButton").on("click", function (event) {
+    location.reload();
   });
 }
 
@@ -207,6 +219,4 @@ $(function quiz() {
 }) */
 
 startQuiz();
-nextQuestion();
-finalScore();
 restartQuiz();
