@@ -32,6 +32,18 @@ function quizSummary() {
         </ul>`;
 }
 
+const onChangeEventHandler = () => {
+    $('input[name=answerOption]').change((event) => {
+        let isChecked = $('input[name=answerOption]:checked');
+        let isNotChecked = $('input[name=answerOption]:not(:checked)');
+        
+        $(isChecked).closest('label').addClass('onInputChecked');
+         $(isNotChecked).closest('label').removeClass('onInputChecked');
+      
+        console.log('Input change working')
+    });
+} 
+
 function startQuiz() {
 /* changes from startPage to questionPage */
   $(".startButton").on("click", function() {
@@ -39,6 +51,7 @@ function startQuiz() {
     $("header").append(quizSummary());
     $(".mainQuiz").html(questionPage());
     formHandler();
+    onChangeEventHandler();
 });
 }
 
@@ -79,8 +92,9 @@ function resultButtonHandler() {
 }
 
 function restartButtonHandler() {
-  $(".restartButton").on("click", function(event) {
+  $(".resultButton").on("click", function(event) {
     console.log("restartButton works");
+    restartQuiz();
   });
 }
 
@@ -152,7 +166,7 @@ function lastWrongAnswer() {
 /* generates page for last wrongAnswer */
 console.log("lastWrongAnswer works");
 return `<div class="feedback">
-          <div class="lastFeedbackFalse">
+          <div class="feedbackFalse">
             <img class="feedbackImage" src="${STORE[questionNumber].pic}" alt="${STORE[questionNumber].alt}">
             <h3>That's wrong. ${STORE[questionNumber].correctAnswer} is correct.</h3>
             </div>
@@ -186,7 +200,7 @@ function resultPage() {
           <p>${score} points! What is wrong with you? Try again!</p>
           <button class="restartButton" type="button">Try again</button>
         </div>`);
-        
+
   } else if(score === 1) {
     $(".mainQuiz").html(`<div class="resultPage result3">
           <img class="resultImage three" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
@@ -203,8 +217,6 @@ function resultPage() {
   }
 }
 
-
-
 function restartQuiz () {
   $(".restartButton").on("click", function (event) {
     location.reload();
@@ -219,4 +231,4 @@ $(function quiz() {
 }) */
 
 startQuiz();
-restartQuiz();
+$(restartQuiz());

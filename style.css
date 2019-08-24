@@ -162,12 +162,7 @@ color: black;
 border: 2px solid rgba(187, 75, 10, 0.938);
 }
 
-label:checked {
-background-color: rgba(194, 121, 26, 0.938);
-color: black;
-border: 2px solid rgba(187, 75, 10, 0.938);
-}
-input:checked {
+.onInputChecked {
 background-color: rgba(194, 121, 26, 0.938);
 color: black;
 border: 2px solid rgba(187, 75, 10, 0.938);
@@ -192,9 +187,12 @@ background-color: rgba(194, 121, 26, 0.938);
 color: black;
 border: 2px solid rgba(187, 75, 10, 0.938);
 }
+
 .feedback {
-background-image: url('http://intlportal2.s3.foxfilm.com/intlportal2/dev-temp/de-DE/__5a607fd70ad26.jpg');
-background-blend-mode: saturation;
+background-image: linear-gradient(
+    rgba(39, 40, 44, 0.377),
+    rgba(255, 0, 0, 0.312)
+  ), url('http://intlportal2.s3.foxfilm.com/intlportal2/dev-temp/de-DE/__5a607fd70ad26.jpg');
 background-repeat: no-repeat;
 background-size: cover;
 display: flex;
@@ -278,7 +276,7 @@ header {
 }
 
 .startImage {
-  position: absolute;
+  position: relative;
   left: 0;  
   top: 0;  
   width: 100%;  
@@ -297,16 +295,17 @@ h1 {
   font-size: 40px;
   width: 40%;
   height: 75px;
-  background: white;
-  color: black;
-  position: absolute;
+  background: black;
+  color: white;
+  position: relative;
+  top: 20px;
   bottom: 0px;
   border: 2px solid black;
 }
 
 .startButton:hover, .restartButton:hover {
-color: white;
-background-color: black;
+color: black;
+background-color: white;
 }
 
 ul {
