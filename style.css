@@ -17,6 +17,7 @@ display: flex;
 header {
 position: fixed;
 display: flex;
+z-index: 1;
 flex-direction: column;
 align-items: center;
 top: 0px;
@@ -95,7 +96,7 @@ background-color: white;
 
 .questionAnswerForm {
 width: 100%;
-height: 100%;
+height: 100vh;
 display: flex;
 background-image: linear-gradient(
     rgba(39, 40, 44, 0.377),
@@ -105,7 +106,7 @@ background-repeat: no-repeat;
 background-size: cover;
 flex-direction: column;
 margin-top: 178px;
-padding: 10px;
+padding: 62px;
 }
 
 .answerOptionRadio {
@@ -156,6 +157,7 @@ transform: translateY(-50%);
 cursor: pointer;
 }
 
+
 label:hover, label:focus {
 background-color: rgba(194, 121, 26, 0.938);
 color: black;
@@ -167,6 +169,7 @@ background-color: rgba(194, 121, 26, 0.938);
 color: black;
 border: 2px solid rgba(187, 75, 10, 0.938);
 }
+
 
 .answerSubmitButton {
 font-family: 'Staatliches', cursive;
@@ -359,7 +362,6 @@ ul li:first-child {
 
 .questionAnswerForm {
   margin-top: 176px;
-  padding: 22px 12px 22px 12px;
 }
 }
 
