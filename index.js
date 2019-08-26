@@ -32,17 +32,13 @@ function quizSummary() {
         </ul>`;
 }
 
-const onChangeEventHandler = () => {
-    $('input[name=answerOption]').change((event) => {
-        let isChecked = $('input[name=answerOption]:checked');
-        let isNotChecked = $('input[name=answerOption]:not(:checked)');
-        
-        $(isChecked).closest('label').addClass('onInputChecked');
-         $(isNotChecked).closest('label').removeClass('onInputChecked');
-      
-        console.log('Input change working')
-    });
-} 
+function formHandler(){
+  $("form").on("submit", function(event) {
+    event.preventDefault();
+    submitAnswer();
+    console.log('Submit works');
+ });  
+}
 
 function startQuiz() {
 /* changes from startPage to questionPage */
@@ -55,13 +51,17 @@ function startQuiz() {
 });
 }
 
-function formHandler(){
-  $("form").on("submit", function(event) {
-    event.preventDefault();
-    submitAnswer();
-    console.log('Submit works');
- });  
-}
+const onChangeEventHandler = () => {
+    $('input[name=answerOption]').change((event) => {
+        let isChecked = $('input[name=answerOption]:checked');
+        let isNotChecked = $('input[name=answerOption]:not(:checked)');
+        
+        $(isChecked).closest('label').addClass('onInputChecked');
+         $(isNotChecked).closest('label').removeClass('onInputChecked');
+      
+        console.log('Input change working')
+    });
+} 
 
 function updateQuestionNumber() {
   questionNumber += 1;
@@ -76,6 +76,7 @@ function increaseScore() {
 function generateNextQuestion() {
   $(".mainQuiz").html(questionPage());
   formHandler();
+  onChangeEventHandler();
 }
 
 function nextQuestionHandler() {
@@ -92,12 +93,11 @@ function resultButtonHandler() {
 }
 
 function restartButtonHandler() {
-  $(".resultButton").on("click", function(event) {
+  $(".restartButton").on("click", function(event) {
     console.log("restartButton works");
     restartQuiz();
   });
 }
-
 
 function submitAnswer() {
     //finds user input
@@ -174,18 +174,20 @@ return `<div class="feedback">
         </div>`;
 }
 
+
+
 function resultPage() {
   console.log("resultPage works");
   $(".quizSummary").remove();
   restartButtonHandler();
 
 /* generates page for end result  */
-  if(score === 10) {
-    $(".mainquiz").html(`<div class="resultPage result1">
+  if(score == 10) {
+     $(".mainQuiz").html(`<div class="resultPage result1">
           <img class="resultImage one" src="https://media.npr.org/assets/img/2013/02/14/df-07405r_rgb-1c87673232c2f1a1011d2bea5262ca07c95a7349-s800-c85.jpg" alt="John McClane doing something awesome">
           <p>${score} points! You are tough, you also watched Die Hard 5. RESPECT!</p>
           <button class="restartButton" type="button">Try again</button>
-        </div>`);
+      </div>`);
 
   } else if(score > 5) {
     $(".mainQuiz").html(`<div class="resultPage result2">
@@ -217,18 +219,10 @@ function resultPage() {
   }
 }
 
-function restartQuiz () {
-  $(".restartButton").on("click", function (event) {
+
+function restartQuiz() {
     location.reload();
-  });
 }
 
+$(startQuiz());
 
-
-/*
-$(function quiz() {
-  /* contains all functions 
-}) */
-
-startQuiz();
-$(restartQuiz());
