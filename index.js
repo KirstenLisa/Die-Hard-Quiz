@@ -92,12 +92,6 @@ function resultButtonHandler() {
   })
 }
 
-function restartButtonHandler() {
-  $(".restartButton").on("click", function(event) {
-    console.log("restartButton works");
-    restartQuiz();
-  });
-}
 
 function submitAnswer() {
     //finds user input
@@ -174,49 +168,55 @@ return `<div class="feedback">
         </div>`;
 }
 
-
-
 function resultPage() {
   console.log("resultPage works");
   $(".quizSummary").remove();
-  restartButtonHandler();
 
 /* generates page for end result  */
   if(score == 10) {
      $(".mainQuiz").html(`<div class="resultPage result1">
-          <img class="resultImage one" src="https://media.npr.org/assets/img/2013/02/14/df-07405r_rgb-1c87673232c2f1a1011d2bea5262ca07c95a7349-s800-c85.jpg" alt="John McClane doing something awesome">
+          <img class="resultImage" src="https://media.npr.org/assets/img/2013/02/14/df-07405r_rgb-1c87673232c2f1a1011d2bea5262ca07c95a7349-s800-c85.jpg" alt="John McClane doing something awesome">
           <p>${score} points! You are tough, you also watched Die Hard 5. RESPECT!</p>
           <button class="restartButton" type="button">Try again</button>
       </div>`);
 
   } else if(score > 5) {
     $(".mainQuiz").html(`<div class="resultPage result2">
-          <img class="resultImage two" src="https://apps-cloud.n-tv.de/img/11002071-1373985628000/16-9/750/36823409.jpg" alt="John McClane doing something awesome">
+          <img class="resultImage" src="https://apps-cloud.n-tv.de/img/11002071-1373985628000/16-9/750/36823409.jpg" alt="John McClane doing something awesome">
           <p>${score} points! Okay, not that bad.</p>
           <button class="restartButton" type="button">Try again</button>
       </div>`);
 
   } else if(score > 3) {
     $(".mainQuiz").html(`<div class="resultPage result3">
-          <img class="resultImage three" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
+          <img class="resultImage" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
           <p>${score} points! What is wrong with you? Try again!</p>
           <button class="restartButton" type="button">Try again</button>
         </div>`);
 
   } else if(score === 1) {
     $(".mainQuiz").html(`<div class="resultPage result3">
-          <img class="resultImage three" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
+          <img class="resultImage" src="https://www.washingtonpost.com/resizer/mA_tRYVw4hTwCSpqcAlM1hWO_ow=/760x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/MCTXTKG2FA3X3JDEP2RBFXWKVI.jpg" alt="John McClane doing something awesome">
           <p>${score} point! What is wrong with you? Try again!</p>
           <button class="restartButton" type="button">Try again</button>
         </div>`);
 
   } else {
     $(".mainQuiz").html(`<div class="resultPage result4">
-          <img class="resultImage four" src="https://tel.img.pmdstatic.net/fit/https.3A.2F.2Fphoto.2Eprogramme-tv.2Enet.2Fupload.2Fslideshow.2Fles-films-les-plus-marquants-de-bruce-willis-7763.2F1-die-hard-1-131753.2Ejpg/902x600/quality/65/die-hard-1-piege-de-cristal-1988.jpg" alt="John McClane doing something awesome">
+          <img class="resultImage" src="https://tel.img.pmdstatic.net/fit/https.3A.2F.2Fphoto.2Eprogramme-tv.2Enet.2Fupload.2Fslideshow.2Fles-films-les-plus-marquants-de-bruce-willis-7763.2F1-die-hard-1-131753.2Ejpg/902x600/quality/65/die-hard-1-piege-de-cristal-1988.jpg" alt="John McClane doing something awesome">
           <p>${score} points! Disgrace!</p>
           <button class="restartButton" type="button">Try again</button>
         </div>`);
   }
+  restartButtonHandler();
+}
+
+
+function restartButtonHandler() {
+  $(".restartButton").on("click", function(event) {
+    console.log("restartButton works");
+    restartQuiz();
+  });
 }
 
 

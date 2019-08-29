@@ -3,7 +3,6 @@
 }
 
 html, body, main {
-min-height: 100vh;
 width: 100%;
 }
 
@@ -12,6 +11,7 @@ font-family: 'Staatliches', cursive;
 margin: 0;
 padding: 0;
 display: flex;
+background: black;
 }
 
 header {
@@ -59,7 +59,6 @@ align-items: center;
 background: white;
 margin: 140px 0px 0px 0px;
 width: 100%;
-min-height: 100vh;
 }
 
 .startImage {
@@ -67,24 +66,26 @@ width: 100%;
 }
 
 h1 {
-margin-top: 65px;
-margin-bottom: 25px;
-font-size: 55px;
+margin-top: 38px;
+margin-bottom: 20px;
+font-size: 40px;
 text-align: center;
 }
 
 .resultPage > p {
-font-size: 40px;
+font-size: 38px;
 text-align: center;
+margin-top: 10px;
+margin-bottom: 0;
 }
 
 .startButton, .restartButton {
 font-family: 'Staatliches', cursive;
 font-size: 25px;
-margin-top: 20px;
-margin-bottom: 30px;
+margin-top: 10px;
+margin-bottom: 10px;
 width: 40%;
-height: 60px;
+height: 50px;
 background: black;
 color: white;
 }
@@ -96,7 +97,6 @@ background-color: white;
 
 .questionAnswerForm {
 width: 100%;
-height: 100vh;
 display: flex;
 background-image: linear-gradient(
     rgba(39, 40, 44, 0.377),
@@ -106,7 +106,7 @@ background-repeat: no-repeat;
 background-size: cover;
 flex-direction: column;
 margin-top: 178px;
-padding: 62px;
+padding: 26px;
 }
 
 .answerOptionRadio {
@@ -200,19 +200,18 @@ background-repeat: no-repeat;
 background-size: cover;
 display: flex;
 flex-direction: column;
-margin-top: 50px;
+margin-top: 75px;
 width: 100%;
-min-height: 100vh;
 text-align: center;
 align-items: center;
 }
 
 .feedbackCorrect, .feedbackFalse, .lastFeedbackCorrect, .lastFeedbackFalse {
-background: white;
-margin: 150px 0px 0px 0px;
-width: 80%;
-filter: grayscale(80%);
-border: 2px solid black;
+  background: white;
+  margin: 145px 0px 0px 0px;
+  width: 66%;
+  filter: grayscale(80%);
+  border: 2px solid black;
 }
 
 .feedbackImage {
@@ -222,14 +221,15 @@ width: 100%;
 h3 {
 width: 100%;
 font-size: 30px;
+margin: 10px 0px;
 }
 
 .nextQuestionButton, .resultButton {
 font-family: 'Staatliches', cursive;
-font-size: 40px;
-margin-bottom: 15px;
-width: 80%;
-height: 60px;
+font-size: 25px;
+margin-bottom: 35px;
+width: 66%;
+height: 50px;
 color: white;
 background: black;
 opacity: 0.8;
@@ -246,16 +246,115 @@ color: black;
 background: white;
 }
 
-@media screen and (min-width: 980px) /* Desktop */ {
-body {
-  background: red;
+
+@media screen  and (min-width: 760px) /* Tablet */ {
+
+header {
+flex-direction: row;
+justify-content: space-between;
+height: 75px;
 }
 
+.headerImage {
+margin: 0px 10px 0px 20px;
+top: 0px;
+bottom: 0px;
+}
+
+.name {
+margin-right: 20px;
+margin-top: 0px;
+margin-bottom: 0px;
+}
+
+.startPage, .resultPage {
+  margin-top: 32px;
+}
+
+h1 {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 40px;
+}
+
+.startButton, .restartButton {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  height: 50px;
+  font-size: 25px;
+}
+
+ul {
+  display: flex;
+  font-size: 20px;
+  flex-direction: row;
+  margin: 10px 20px 10px 20px;
+}
+
+ul li:first-child {
+  margin-right: 20px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.answerOptionRadio {
+  height: 64px;
+  font-size: 33px;
+}
+.answerSubmitButton {
+  height: 64px;
+  font-size: 33px;
+}
+
+.questionAnswerForm {
+  margin-top: 75px;
+  padding: 40px;
+}
+
+.feedback {
+  margin-top: 70px;
+}
+
+.feedbackCorrect, .feedbackFalse, .lastFeedbackCorrect, .lastFeedbackFalse {
+  margin: 48px 0px 0px 0px;
+  width: 70%;
+}
+
+.nextQuestionButton, .resultButton {
+  height: 62px;
+  width: 70%;
+  margin-bottom: 43px;
+}
+
+h3 {
+  margin: 10px 0px 10px 0px;
+}
+
+.resultPage {
+  margin-top: 72px;
+}
+
+.resultPage > p {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.resultImage {
+  height: 397px;
+}
+}
+
+@media screen and (min-width: 980px) /* Desktop */ {
 
 header {
   position: absolute;
   flex-direction: row;
   justify-content: space-evenly;
+  height: 118px;
 }
 
 .headerImage {
@@ -292,6 +391,7 @@ h1 {
   position: absolute;
   color: white;
   text-shadow: 1px 1px 4px black;
+  top: 70px;
 }
 
 .startButton, .restartButton {
@@ -319,57 +419,63 @@ ul {
   margin: 0;
 }
 
+h2 {
+  font-size: 45px;
+}
+
 .questionAnswerForm {
   margin-top: 140px;
   padding: 90px 40px 90px 40px;
 }
-
+.answerOptionRadio {
+  height: 70px;
+  font-size: 35px;
 }
 
-@media screen  and (min-width: 451px) and (max-device-width: 979px)/* Tablet */ {
-body {
-  background: blue;
+.answerSubmitButton {
+  height: 70px;
+  font-size: 35px;
 }
 
-.startPage, .resultPage {
-  margin-top: 120px;
+.feedback {
+  margin-top: 74px;
 }
 
-h1 {
-  margin-top: 20px;
-  margin-bottom: 0px;
+.feedbackCorrect, .feedbackFalse, .lastFeedbackCorrect, .lastFeedbackFalse {
+  width: 70%;
+  margin-top: 66px;
 }
 
-.startButton, .restartButton {
+h3 {
+  font-size: 35px;
+}
+
+.nextQuestionButton, .resultButton {
+  width: 70%;
+  font-size: 35px;
+  height: 66px;
+}
+
+.resultPage {
+  margin-top: 116px;
+  padding-bottom: 20px;
+}
+
+.resultPage p {
+  margin: 28px 0px 0px 0px;
+}
+
+.resultImage {
+  width: 70%;
+}
+
+.restartButton {
+  height: 70px;
   margin-top: 10px;
-  margin-bottom: 20px;
-  height: 60px;
+  margin-bottom: 44px;
 }
 
-ul {
-  display: flex;
-  font-size: 20px;
-  flex-direction: row;
-  margin: 10px 20px 10px 20px;
-}
-
-ul li:first-child {
-  margin-right: 20px;
-}
-
-.name {
-  margin-bottom: 0px;
-}
-
-.questionAnswerForm {
-  margin-top: 176px;
-}
 }
 
 
-@media screen and (max-width: 450px) /* Mobile */ {
-body {
-  background: green;
-}
-}
 
