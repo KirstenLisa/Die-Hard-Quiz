@@ -53,12 +53,12 @@ padding: 0px;
 
 .startPage, .resultPage {
 display: flex;
-flex: 1;
 flex-direction: column;
 align-items: center;
 background: white;
 margin: 140px 0px 0px 0px;
 width: 100%;
+padding-bottom: 35px;
 }
 
 .startImage {
@@ -75,8 +75,8 @@ text-align: center;
 .resultPage > p {
 font-size: 38px;
 text-align: center;
-margin-top: 10px;
-margin-bottom: 0;
+margin-top: 20px;
+margin-bottom: 10px;
 }
 
 .startButton, .restartButton {
@@ -106,7 +106,7 @@ background-repeat: no-repeat;
 background-size: cover;
 flex-direction: column;
 margin-top: 178px;
-padding: 26px;
+padding: 50px 26px 50px 26px;
 }
 
 .answerOptionRadio {
@@ -200,7 +200,7 @@ background-repeat: no-repeat;
 background-size: cover;
 display: flex;
 flex-direction: column;
-margin-top: 75px;
+margin-top: 110px;
 width: 100%;
 text-align: center;
 align-items: center;
@@ -209,7 +209,7 @@ align-items: center;
 .feedbackCorrect, .feedbackFalse, .lastFeedbackCorrect, .lastFeedbackFalse {
   background: white;
   margin: 145px 0px 0px 0px;
-  width: 66%;
+  width: 92%;
   filter: grayscale(80%);
   border: 2px solid black;
 }
@@ -227,8 +227,8 @@ margin: 10px 0px;
 .nextQuestionButton, .resultButton {
 font-family: 'Staatliches', cursive;
 font-size: 25px;
-margin-bottom: 35px;
-width: 66%;
+margin-bottom: 73px;
+width: 92%;
 height: 50px;
 color: white;
 background: black;
@@ -310,11 +310,11 @@ h2 {
 
 .questionAnswerForm {
   margin-top: 75px;
-  padding: 40px;
+  padding: 25px 15px 25px 15px;
 }
 
 .feedback {
-  margin-top: 70px;
+  margin-top: 55px;
 }
 
 .feedbackCorrect, .feedbackFalse, .lastFeedbackCorrect, .lastFeedbackFalse {
@@ -334,6 +334,7 @@ h3 {
 
 .resultPage {
   margin-top: 72px;
+  padding-bottom: 24px;
 }
 
 .resultPage > p {
@@ -344,7 +345,8 @@ h3 {
 }
 
 .resultImage {
-  height: 397px;
+  height: 347px;
+  width: auto;
 }
 }
 
@@ -391,7 +393,7 @@ h1 {
   position: absolute;
   color: white;
   text-shadow: 1px 1px 4px black;
-  top: 70px;
+  top: 110px;
 }
 
 .startButton, .restartButton {
@@ -425,7 +427,7 @@ h2 {
 
 .questionAnswerForm {
   margin-top: 140px;
-  padding: 90px 40px 90px 40px;
+  padding: 40px 40px 50px 40px;
 }
 .answerOptionRadio {
   height: 70px;
@@ -466,7 +468,8 @@ h3 {
 }
 
 .resultImage {
-  width: 70%;
+  width: auto;
+  height: 397px;
 }
 
 .restartButton {
